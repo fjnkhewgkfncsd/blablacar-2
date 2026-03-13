@@ -24,4 +24,13 @@ class DateTimeUtils {
   static String formatTime(DateTime dateTime) {
     return DateFormat('HH:mm').format(dateTime); // Example: 14:30 (24-hour format)
   }
+
+  static bool compareDate(DateTime dateTime) {
+    final now = DateTime.now();
+
+    final today = DateTime(now.year, now.month, now.day);
+    final inputDate = DateTime(dateTime.year, dateTime.month, dateTime.day);
+
+    return !inputDate.isBefore(today);
+  }
 }
