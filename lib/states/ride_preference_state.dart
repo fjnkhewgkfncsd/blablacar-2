@@ -3,7 +3,7 @@ import '../model/ride_pref/ride_pref.dart';
 import '../data/repositories/ride_preference/ride_preference_repository.dart';
 
 class RidePreferenceState extends ChangeNotifier {
-  RidePreferenceRepository ridePreferenceRepository;
+  final RidePreferenceRepository _ridePreferenceRepository;
 
   RidePreference? _currentRidePreference;
   final int _maxAllowedSeats = 8;
@@ -11,20 +11,20 @@ class RidePreferenceState extends ChangeNotifier {
 
   int get maxAllowedSeats => _maxAllowedSeats;
   RidePreference? get ridePreference => _currentRidePreference;
-  List<RidePreference> get historyRidePreference => _historyRidePreference;
+  List<RidePreference> get historyRidePreferences => _historyRidePreference;
+
+  RidePreferenceState({required RidePreferenceRepository ridePrefRepo}) : _ridePreferenceRepository = ridePrefRepo;
 
   void init() {
-    _historyRidePreference = ridePreferenceRepository.getAllRidePreferences();
+    _historyRidePreference = _ridePreferenceRepository.getAllRidePreferences();
     notifyListeners();
   }
-
-  RidePreferenceState({required this.ridePreferenceRepository});
 
   void selectPreference(RidePreference ridePref) {
     if (_currentRidePreference != ridePref) {
       _currentRidePreference = ridePref;
-      ridePreferenceRepository.addRidePreference(ridePref);
+      _ridePreferenceRepository.addRidePreference(ridePref);
+      notifyListeners();
     }
-    notifyListeners();
   }
 }
