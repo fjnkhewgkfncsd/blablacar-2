@@ -12,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late HomeViewModel? homeViewModel;
+  HomeViewModel? homeViewModel;
 
   @override
   void didChangeDependencies() {

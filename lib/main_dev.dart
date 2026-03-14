@@ -17,7 +17,7 @@ List<SingleChildWidget> get devProviders {
     Provider<LocationRepository>(create: (_) => LocationRepositoryMock()),
     Provider<RidePreferenceRepository>(create: (_) => RidePreferenceRepositoryMock()),
     Provider<RidesRepository>(create: (_) => RidesRepositoryMock()),
-    ChangeNotifierProvider<RidePreferenceState>(create: (_) => RidePreferenceState(ridePreferenceRepository: ridePreferenceRepository)..init()),
+    ChangeNotifierProvider<RidePreferenceState>(create: (_) => RidePreferenceState(ridePrefRepo: ridePreferenceRepository)..init()),
   ];
 }
 
