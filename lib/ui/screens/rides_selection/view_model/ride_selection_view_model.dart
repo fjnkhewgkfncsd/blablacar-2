@@ -1,6 +1,6 @@
 import 'package:blabla/data/repositories/rides/rides_repository.dart';
 import 'package:blabla/model/ride/ride.dart';
-import 'package:blabla/states/ride_preference_state.dart';
+import 'package:blabla/ui/states/ride_preference_state.dart';
 import 'package:flutter/material.dart';
 import '../../../../model/ride_pref/ride_pref.dart';
 

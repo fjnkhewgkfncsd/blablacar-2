@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../model/ride_pref/ride_pref.dart';
-import '../data/repositories/ride_preference/ride_preference_repository.dart';
+import '../../model/ride_pref/ride_pref.dart';
+import '../../data/repositories/ride_preference/ride_preference_repository.dart';
 
 class RidePreferenceState extends ChangeNotifier {
   final RidePreferenceRepository _ridePreferenceRepository;

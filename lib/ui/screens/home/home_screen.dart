@@ -1,4 +1,4 @@
-import 'package:blabla/states/ride_preference_state.dart';
+import 'package:blabla/ui/states/ride_preference_state.dart';
 import 'package:blabla/ui/screens/home/view_model/home_view_model.dart';
 import 'package:blabla/ui/screens/home/widgets/home_content.dart';
 import 'package:flutter/material.dart';

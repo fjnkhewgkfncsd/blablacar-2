@@ -1,4 +1,4 @@
-import 'package:blabla/states/ride_preference_state.dart';
+import 'package:blabla/ui/states/ride_preference_state.dart';
 import 'package:nested/nested.dart';
 import 'package:provider/provider.dart';
 

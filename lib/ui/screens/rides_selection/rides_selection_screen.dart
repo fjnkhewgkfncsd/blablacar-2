@@ -1,5 +1,5 @@
 import 'package:blabla/data/repositories/rides/rides_repository.dart';
-import 'package:blabla/states/ride_preference_state.dart';
+import 'package:blabla/ui/states/ride_preference_state.dart';
 import 'package:blabla/ui/screens/rides_selection/view_model/ride_selection_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
