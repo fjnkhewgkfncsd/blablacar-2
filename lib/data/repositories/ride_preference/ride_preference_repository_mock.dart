@@ -10,6 +10,8 @@ class RidePreferenceRepositoryMock extends RidePreferenceRepository {
 
   @override
   void addRidePreference(RidePreference ridePref) {
-    ridePreferences.add(ridePref);
+    if(ridePreferences.contains(ridePref)){
+      ridePreferences.insert(0, ridePref);
+    }
   }
 }

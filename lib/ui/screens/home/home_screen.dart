@@ -4,41 +4,13 @@ import 'package:blabla/ui/screens/home/widgets/home_content.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  HomeViewModel? homeViewModel;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-
-    if (homeViewModel == null) {
-      final RidePreferenceState ridePreferenceState = context
-          .read<RidePreferenceState>();
-      homeViewModel = HomeViewModel(ridePreferenceState: ridePreferenceState);
-      homeViewModel!.addListener(onStateChanged);
-    }
-  }
-
-  void onStateChanged() {
-    setState(() => {});
-  }
-
-  @override
-  void dispose() {
-    homeViewModel?.removeListener(onStateChanged);
-    homeViewModel?.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return HomeContent(homeViewModel: homeViewModel!);
+    return ChangeNotifierProvider(
+      create: (_) => HomeViewModel(ridePreferenceState: context.read<RidePreferenceState>()),
+      builder:(context,child) =>  HomeContent(homeViewModel: context.read<HomeViewModel>()));
   }
 }
